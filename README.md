@@ -1,5 +1,7 @@
 # MoodTracker – Daily Emotional Log
 
+Live Demo:- https://mood-trackervercelapp.vercel.app/
+
 A high-performance React application designed for personal emotional tracking. Users can select an emoji representing their current mood, add a descriptive note, and save it to a persistent history log. The app features a modern, clean UI with data visualization and full CRUD capabilities.
 
 ## 🎯 Features
