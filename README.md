@@ -15,7 +15,7 @@
 
 ## Instructor Information
 
-* **Instructor Name:** *(Add your instructor name)*
+* **Instructor Name:** *Dipak Shrestha
 * **Course Title:** React Development
 * **College Name:** Samriddhi College, Bhaktapur
 
