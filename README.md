@@ -1,186 +1,179 @@
-# MoodTracker – Daily Emotional Log
+## Project Title
 
-Live Demo:- https://mood-trackervercelapp.vercel.app/
-
-A high-performance React application designed for personal emotional tracking. Users can select an emoji representing their current mood, add a descriptive note, and save it to a persistent history log. The app features a modern, clean UI with data visualization and full CRUD capabilities.
-
-## 🎯 Features
-
-- **Emoji-based Mood Selection** - 10 diverse emojis representing different emotional states
-- **Persistent Storage** - All mood logs are saved to browser's localStorage
-- **Mood History** - Complete log of all your mood entries with timestamps
-- **Mood Summary** - Visual analytics showing your emotional distribution and dominant mood
-- **Delete Function** - Remove individual mood logs with confirmation
-- **Responsive Design** - Works seamlessly on desktop, tablet, and mobile devices
-- **Real-time Validation** - Prevents submission of incomplete entries
-
-## 📁 Project Architecture
-
-```
-Mood Tracker/
-├── index.html                  # Host page with #root mounting point
-├── package.json                # Project dependencies
-├── vite.config.js              # Build configuration
-├── .gitignore
-└── src/
-    ├── index.jsx               # React entry point
-    ├── App.jsx                 # Layout shell
-    ├── MoodContainer.jsx       # State management & business logic
-    ├── components/
-    │   ├── MoodForm.jsx        # User input capture
-    │   ├── MoodList.jsx        # History log display
-    │   ├── MoodCard.jsx        # Individual mood entry display
-    │   └── MoodSummary.jsx     # Analytics & visualization
-    ├── index.css               # Global styles
-    └── styles/
-        ├── App.css             # App layout styles
-        ├── MoodContainer.css   # Container styles
-        ├── MoodForm.css        # Form & emoji selector
-        ├── MoodList.css        # List display styles
-        ├── MoodCard.css        # Card styling
-        └── MoodSummary.css     # Summary & analytics styles
-```
-
-## 🔧 Technical Implementation
-
-### State Management
-- **useState** for managing moods array and form inputs
-- Centralized state in MoodContainer component
-
-### Side Effects (useEffect)
-- **Effect 1**: Load data from localStorage on component mount
-- **Effect 2**: Save data to localStorage on every state change
-
-### Event Handling
-- `onClick` for emoji selection
-- `onChange` for note input
-- `onSubmit` for form submission
-
-### Props Flow
-- Data and handler functions passed from parent to child components
-- Props drilling maintains clean component hierarchy
-
-### Data Persistence
-```javascript
-{
-  id: 1711110000000,        // Unique timestamp
-  emoji: "😊",              // Emoji string
-  text: "How you felt",      // User's note
-  date: "12:45 PM"           // Formatted time
-}
-```
-
-### CRUD Operations
-- **Create**: `addMood()` - Adds new mood entry
-- **Read**: State mapping in MoodList and MoodSummary
-- **Update**: Currently via delete/recreate
-- **Delete**: `deleteMood()` - Filters out mood by ID
-
-## 🎨 Design System
-
-### Color Palette
-- **Primary**: #667eea (Purple-Blue)
-- **Secondary**: #764ba2 (Purple)
-- **Success**: #48bb78 (Green)
-- **Danger**: #f56565 (Red)
-- **Background**: White with gradient backgrounds
-
-### Typography
-- **Font Family**: System font stack (-apple-system, BlinkMacSystemFont, 'Segoe UI', etc.)
-- **Responsive**: Scales beautifully from mobile to desktop
-
-### Component Spacing
-- Consistent use of CSS variables for spacing and sizing
-- Flexbox and CSS Grid for layouts
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js (v14+)
-- npm or yarn
-
-### Installation
-
-1. Navigate to project directory
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Start development server:
-```bash
-npm run dev
-```
-
-4. Build for production:
-```bash
-npm run build
-```
-
-5. Preview production build:
-```bash
-npm run preview
-```
-
-## 💾 Data Storage
-
-The application uses **localStorage** to persist mood data:
-- Key: `mood_tracker_data`
-- Format: JSON stringified array of mood objects
-- Data persists across browser sessions
-- Clear browser data to reset
-
-## ✅ Validation Rules
-
-1. **Emoji Selection**: Required - must select one before submission
-2. **Note Content**: 
-   - Minimum 3 characters
-   - Cannot be empty or whitespace only
-   - Maximum 500 characters (with character counter)
-
-## 📊 Mood Summary Features
-
-The summary component calculates:
-- **Total Logs**: Count of all mood entries
-- **Dominant Mood**: Most frequently logged emotion
-- **Mood Distribution**: Percentage breakdown of each emoji with visual bars
-
-## 🔄 Component Communication
-
-```
-App
-└── MoodContainer (State Management)
-    ├── MoodForm (User Input)
-    ├── MoodList (Display History)
-    │   └── MoodCard (Individual Entry)
-    └── MoodSummary (Analytics)
-```
-
-## 📱 Responsive Breakpoints
-
-- Desktop: 900px max-width container
-- Tablet: Adjusted padding and font sizes
-- Mobile: Single column layouts, touch-friendly buttons
-
-## 🎯 Best Practices Implemented
-
-✅ **Separation of Concerns**: Container vs. Presentational components
-✅ **DRY Principle**: Reusable MoodCard component
-✅ **Key Lists**: Using unique IDs for list rendering
-✅ **Error Handling**: Try-catch for localStorage parsing
-✅ **Accessibility**: Semantic HTML, proper form labels
-✅ **Performance**: useMemo for mood statistics calculation
-✅ **Professional Styling**: CSS Variables, gradients, hover effects
-✅ **Mobile-First Design**: Responsive CSS with media queries
-
-## 📝 License
-
-This project is open source and available for personal use.
-
-## 🤝 Contributing
-
-Feel free to fork, modify, and extend this project!
+> *MoodTracker – Daily Emotional Log (React Application)*
 
 ---
 
-**Made with ❤️ for better emotional awareness**
+## Student Information
+
+* **Name:** Krish Khadka
+* **Roll Number:** *(Add your roll number)*
+* **Course / Program:** BSc CSIT
+* **Semester / Year:** 3rd Semester / 2026
+
+---
+
+## Instructor Information
+
+* **Instructor Name:** *(Add your instructor name)*
+* **Course Title:** React Development
+* **College Name:** Samriddhi College, Bhaktapur
+
+---
+
+## Project Overview
+
+> This project is a web-based **Mood Tracking Application** developed using React.
+> It allows users to record their daily emotions by selecting an emoji and adding a descriptive note.
+> The application stores mood entries persistently using browser localStorage and provides a history log along with visual analytics.
+> Users can monitor emotional patterns over time through summary statistics and distribution charts.
+> The main goal of this project is to promote emotional awareness and demonstrate modern React development practices.
+
+---
+
+## Objectives
+
+* Build a responsive React-based application
+* Implement real-world CRUD functionality
+* Manage application state effectively using React Hooks
+* Store and retrieve persistent data using localStorage
+* Design clean and user-friendly UI/UX
+
+---
+
+## Technologies Used
+
+### Frontend
+
+* React.js
+* HTML, CSS, JavaScript
+* Vite (Build Tool)
+
+### Backend (if applicable)
+
+* Not Applicable (Frontend-only project)
+
+### Database
+
+* Browser localStorage
+
+### Other Tools
+
+* Git & GitHub
+* Vercel (Deployment)
+
+---
+
+## Key Features
+
+* Emoji-based Mood Selection (10 emotions)
+* Persistent Data Storage using localStorage
+* Mood History with timestamps
+* Mood Summary with analytics
+* Delete functionality for mood entries
+* Responsive Design (Mobile, Tablet, Desktop)
+* Real-time form validation
+
+---
+
+## Screens / Modules
+
+* Mood Input Form
+* Mood History List
+* Mood Card (Individual Entry)
+* Mood Summary Dashboard (Analytics)
+
+---
+
+## Installation & Setup
+
+```bash
+# Clone repository
+git clone https://github.com/Samriddhicollege/B.Sc.CSIT-2081-3rd-semester-React-Mood-Tracker.git
+
+# Go to project folder
+cd Mood-Tracker
+
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+---
+
+## Project Structure
+
+```
+Mood Tracker/
+├── index.html
+├── package.json
+├── vite.config.js
+├── src/
+│   ├── index.jsx
+│   ├── App.jsx
+│   ├── MoodContainer.jsx
+│   ├── components/
+│   │   ├── MoodForm.jsx
+│   │   ├── MoodList.jsx
+│   │   ├── MoodCard.jsx
+│   │   └── MoodSummary.jsx
+│   ├── styles/
+│   └── index.css
+```
+
+---
+
+## GitHub & Live Demo
+
+* **GitHub Repository:** [https://github.com/Samriddhicollege/B.Sc.CSIT-2081-3rd-semester-React-Mood-Tracker](https://github.com/Samriddhicollege/B.Sc.CSIT-2081-3rd-semester-React-Mood-Tracker)
+* **Live URL:** [https://mood-trackervercelapp.vercel.app/](https://mood-trackervercelapp.vercel.app/)
+
+---
+
+## Testing
+
+* Tested responsiveness across mobile, tablet, and desktop
+* Verified localStorage data persistence
+* Checked form validation (empty input, character limits)
+* Tested CRUD operations (add/delete moods)
+
+---
+
+## Challenges Faced
+
+>
+
+* Managing state across multiple components efficiently
+* Handling localStorage parsing and synchronization
+* Designing clean and responsive UI
+* Implementing mood analytics and summary calculations
+
+---
+
+## Future Enhancements
+
+* Add edit/update mood functionality
+* Cloud database integration (Firebase/MongoDB)
+* User authentication system
+* Advanced data visualization (charts & graphs)
+* Dark mode support
+
+---
+
+## Acknowledgement
+
+> I would like to thank my instructor for guidance and support throughout this project.
+
+---
+
+## Declaration
+
+> I hereby declare that this project is my original work and has been completed as part of my academic submission.
