@@ -7,7 +7,7 @@
 ## Student Information
 
 * **Name:** Krish Khadka
-* **Roll Number:** *(Add your roll number)*
+* **Roll Number: 11
 * **Course / Program:** BSc CSIT
 * **Semester / Year:** 3rd Semester / 2026
 
